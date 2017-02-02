@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE)
 This PDF was created from an R Markdown document by Erik Osnas from the original report wrtten by Brad Shults. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 ```{r}
-dat <- read.csv(file = "Photo Count Data/EMGO fall photo data 1985 2014.csv", header = TRUE)
+dat <- read.csv(file = "EMGO fall photo data 1985 2014.csv", header = TRUE)
 #trim to correct dimensions, remove year = 1900 and zone = c(NA and 0)
 dat <- dat[dat$year!= 1900 & !dat$Zone%in%c("0", "#N/A") & dat$valid == 1,]
 dat$RDate <- as.Date(paste(dat$mo,"-", dat$da, "-", dat$year, sep=""), format = "%m-%d-%Y")
